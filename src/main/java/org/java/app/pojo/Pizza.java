@@ -23,8 +23,11 @@ public class Pizza {
 	@Column(nullable = false)
 	private float price;
 
-	public Pizza(int id, String name, String overview, String picture, float price) {
-		
+	public Pizza(String name, String overview, String picture, float price) {
+		setName(name);
+		setOverview(overview);
+		setPicture(picture);
+		setPrice(price);
 	}
 
 	public int getId() {
@@ -69,8 +72,8 @@ public class Pizza {
 
 	@Override
 	public String toString() {
-		return "Pizza [id=" + id + ", name=" + name + ", overview=" + overview + ", picture=" + picture + ", price="
-				+ price + "]";
+		return "Pizza [id=" + getId() + ", name=" + getName() + ", overview=" + getOverview() + ", picture=" + getPicture() + ", price="
+				+ getPrice() + "]";
 	}
 
 }
