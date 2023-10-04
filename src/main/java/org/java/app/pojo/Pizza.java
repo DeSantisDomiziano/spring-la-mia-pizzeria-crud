@@ -22,6 +22,8 @@ public class Pizza {
 	
 	@Column(nullable = false)
 	private float price;
+	
+	public Pizza() {}
 
 	public Pizza(String name, String overview, String picture, float price) {
 		setName(name);

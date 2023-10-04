@@ -6,6 +6,13 @@
 	<title>Document</title>
 </head>
 <body>
-	
+	<p th:if="${pizze.size()} == 0">
+		non ci sono pizze
+	</p>
+	<ul th:if="${pizze.size()} > 0">
+		<li th:each="pizza : ${pizze}">
+			[[${pizza.toString()}]]
+		</li>
+	</ul>
 </body>
 </html>

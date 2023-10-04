@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/pizze")
+@RequestMapping("/")
 public class MainController {
 	
 	@Autowired
 	private PizzaService pizzaService;
 	
-	@GetMapping
+	@GetMapping("/pizze")
 	public String getIndex(Model model) {
 		
 		List<Pizza> pizze = pizzaService.findAll();
@@ -26,13 +26,5 @@ public class MainController {
 		
 		return "index";
 	}
-	
-	@GetMapping("/pizza/{id}")
-	public String getShow(@PathVariable int id, Model model) {
-		
-		Pizza pizza = pizzaService.findById(id);
-		model.addAttribute("pizza",pizza);
-		
-		return "show";
-	}
+
 }
