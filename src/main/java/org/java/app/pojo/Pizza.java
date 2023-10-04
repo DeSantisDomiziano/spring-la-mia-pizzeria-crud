@@ -72,7 +72,5 @@ public class Pizza {
 		return "Pizza [id=" + id + ", name=" + name + ", overview=" + overview + ", picture=" + picture + ", price="
 				+ price + "]";
 	}
-	
-	
 
 }
