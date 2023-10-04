@@ -11,7 +11,10 @@
 	</p>
 	<ul th:if="${pizze.size()} > 0">
 		<li th:each="pizza : ${pizze}">
-			[[${pizza.toString()}]]
+			[[${pizza.getName()}]]
+			[[${pizza.getOverview()}]]
+			<img th:src="${pizza.getPicture()}">
+			[[${pizza.getPrice()}]] $$$
 		</li>
 	</ul>
 </body>
