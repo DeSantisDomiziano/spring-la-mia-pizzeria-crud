@@ -32,7 +32,7 @@ public class Pizza {
 	private String overview;
 	
 	@Lob
-	@NotBlank
+	@NotBlank(message = "non può essere vuoto")
 	private String picture;
 	
 	@Column(nullable = false)
