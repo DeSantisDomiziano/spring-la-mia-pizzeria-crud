@@ -19,9 +19,9 @@ public class SpringLaMiaPizzeriaCrudApplication implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
-		Pizza p1 = new Pizza("p1", "overview1", "https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&w=400", 10.10f);
-		Pizza p2 = new Pizza("p2", "overview1", "https://images.pexels.com/photos/7947152/pexels-photo-7947152.jpeg?auto=compress&cs=tinysrgb&w=400", 12.10f);
-		Pizza p3 = new Pizza("p3", "overview1", "https://images.pexels.com/photos/5903262/pexels-photo-5903262.jpeg?auto=compress&cs=tinysrgb&w=400", 13.10f);
+		Pizza p1 = new Pizza("p11", "overview1", "https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&w=400", 10.10f);
+		Pizza p2 = new Pizza("p22", "overview1", "https://images.pexels.com/photos/7947152/pexels-photo-7947152.jpeg?auto=compress&cs=tinysrgb&w=400", 12.10f);
+		Pizza p3 = new Pizza("p33", "overview1", "https://images.pexels.com/photos/5903262/pexels-photo-5903262.jpeg?auto=compress&cs=tinysrgb&w=400", 13.10f);
 		
 		pizzaService.save(p1);
 		pizzaService.save(p2);
