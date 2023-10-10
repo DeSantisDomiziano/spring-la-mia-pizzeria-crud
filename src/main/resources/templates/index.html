@@ -16,7 +16,7 @@
 		
 		<form>
 			<span>Cerca</span>
-			<input type="text" name="name" th:text="${name}">
+			<input type="text" name="name" th:value="${name}">
 			<input type="submit">
 		</form>
 		
@@ -32,6 +32,13 @@
 				</a>
 				[[${pizza.getOverview()}]]
 				[[${pizza.getPrice()}]] $$$
+				<button>					
+				<a th:href="@{/edit/{id} (id = ${pizza.getId()})}"> Edita </a>
+				</button>
+				<form th:action="@{/delete/{id}(id=${pizza.id})}" method="POST">
+					
+					<input type="submit" value="ELIMINA">
+				</form>
 			</li>
 		</ul>
 		

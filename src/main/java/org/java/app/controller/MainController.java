@@ -31,9 +31,10 @@ public class MainController {
 		List<Pizza> pizze = name == null 
 							? pizzaService.findAll()
 							: pizzaService.searchPizzaByNameOrOverview(name, name);
-		
+		String Oldname = name;
 		
 		model.addAttribute("pizze", pizze);
+		model.addAttribute("name", Oldname);
 		
 		return "index";
 	}
@@ -68,5 +69,35 @@ public class MainController {
 		
 		return "redirect:/pizze";
 	}
+	
+	@GetMapping("/edit/{id}")
+	public String edit(@PathVariable int id,
+						Model model) {
+		model.addAttribute("pizza", pizzaService.findById(id));
+		
+		return "edit";		
+	}
+	
+	@PostMapping("/edit/{id}")
+	public String update(@Valid @ModelAttribute Pizza pizza,
+						BindingResult bindingResult,
+						Model model) {
+		
+		if(bindingResult.hasErrors()) {
+			bindingResult.getAllErrors().forEach(System.out::println);
+			
+			return "edit";
+		}
+		
+		pizzaService.save(pizza);
+		return "redirect:/pizze";
+	}
+	
+	@PostMapping("/delete/{id}")
+	public String delete(@PathVariable int id) {
+		pizzaService.deleteById(id);
+		return "redirect:/pizze";
+	}
+	
 
 }

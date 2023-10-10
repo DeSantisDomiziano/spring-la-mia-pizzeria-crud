@@ -28,4 +28,9 @@ public class PizzaService {
 	public List<Pizza> searchPizzaByNameOrOverview(String name, String overview){
 		return pizzaRepo.findByNameContainingOrOverviewContaining(name, overview);
 	}
+	
+	public void deleteById(int id) {
+		
+		 pizzaRepo.deleteById(id);
+	}
  }
